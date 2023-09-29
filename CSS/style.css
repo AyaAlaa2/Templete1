@@ -46,16 +46,32 @@
 }
 
 .list li a{
+    position: relative;
     text-decoration: none;
     color: white;
     font-size: 18px;
+    transition: 0.5s;
 }
 
-.active{
-    color:#023047 ;
-    padding-bottom: 5px;
-    border-bottom: 3px solid #023047;
+.list li a::after {
+    position: absolute;
+    content: "";
+    bottom: -9;
+    left: 0;
+    width: 0%;
+    transition: 0.5s;
+    border-radius: 20px;
+    border:2px solid rgb(135, 183, 205);
 }
+
+.list li a:hover , .list .active a{
+    color: #023047;
+}
+
+.list li a:hover::after , .list .active a::after {
+    border-color:#023047;
+    width: 100%;
+} 
 
 .book-table{
     float: right;
